@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imagem Centralizada</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      #imageContainer,
+      #mio,
+      #vc {
+        position: absolute;
+        margin: auto;
+        visibility: hidden;
+      }
+
+      .show {
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="mio" class="mio">
+        <img
+          src="./public/mio.png"
+          alt="Imagem centralizada"
+          class="centered-image"
+        />
+      </div>
+      <div id="vc" class="vc">
+        <img
+          src="./public/gato-rindo.webp"
+          alt="Imagem centralizada"
+          class="centered-image"
+        />
+      </div>
+
+      <audio id="audio">
+        <source src="./public/gato-rindo.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+
+    <script>
+      // Aguarda 2 segundos e então mostra a imagem
+      setTimeout(() => {
+        const imageContainer = document.getElementById("mio");
+        imageContainer.style.visibility = "visible";
+      }, 2000);
+
+      setTimeout(() => {
+        const imageContainer = document.getElementById("vc");
+        imageContainer.style.visibility = "visible";
+
+        const audio = document.getElementById("audio");
+        audio.play();
+      }, 4000);
+    </script>
+  </body>
+</html>
